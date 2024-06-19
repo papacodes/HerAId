@@ -4,8 +4,7 @@ class UserResponse {
   String surname;
   String email;
   String contactNumber;
-  String? emergencyContact;
-  String? university;
+  String? address;
   String? picture;
   String status;
   DateTime? emailVerifiedAt;
@@ -18,8 +17,7 @@ class UserResponse {
     required this.surname,
     required this.email,
     required this.contactNumber,
-    this.emergencyContact,
-    this.university,
+    this.address,
     this.picture,
     required this.status,
     this.emailVerifiedAt,
@@ -34,13 +32,10 @@ class UserResponse {
       surname: json['surname'] as String,
       email: json['email'] as String,
       contactNumber: json['contact_number'] as String,
-      emergencyContact: json['emergency_contact'] as String?,
-      university: json['university'] as String?,
+      address: json['address'] as String?,
       picture: json['picture'] as String?,
       status: json['status'] as String,
-      emailVerifiedAt: json['email_verified_at'] == null
-          ? null
-          : DateTime.parse(json['email_verified_at'] as String),
+      emailVerifiedAt: json['email_verified_at'] == null ? null : DateTime.parse(json['email_verified_at'] as String),
       createdAt: DateTime.parse(json['created_at'] as String),
       updatedAt: DateTime.parse(json['updated_at'] as String),
     );

@@ -3,6 +3,7 @@ import 'package:her_aid/res/dimens.dart';
 import 'package:her_aid/res/navigator.dart';
 import 'package:her_aid/viewmodels/authentication/login_viewmodel.dart';
 import 'package:her_aid/viewmodels/view_model_provider.dart';
+import 'package:her_aid/views/screens/authentication/register_view.dart';
 import 'package:her_aid/views/widgets/button.dart';
 import 'package:her_aid/views/widgets/textfield.dart';
 import 'package:iconsax/iconsax.dart';
@@ -68,7 +69,7 @@ class _LoginViewState extends State<LoginView> {
                   outlined: false,
                 ),
                 PrimaryButton(
-                  // onTap: () => NavigatorHelper.to(const RegisterView(), context),
+                  onTap: () => NavigatorHelper.to(const RegisterView(), context),
                   text: "Create Account",
                   iconData: Iconsax.user,
                 ),

@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:her_aid/viewmodels/base_view_model.dart';
+import 'package:her_aid/viewmodels/base_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class ViewModelProvider<T extends BaseViewModel> extends StatelessWidget {

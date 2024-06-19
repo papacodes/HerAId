@@ -5,7 +5,7 @@ import 'package:her_aid/models/responses/login_response.dart';
 import 'package:her_aid/res/toast.dart';
 import 'package:her_aid/services/http_service/http_service.dart';
 import 'package:her_aid/services/implementation/authentication_service.dart';
-import 'package:her_aid/viewmodels/base_view_model.dart';
+import 'package:her_aid/viewmodels/base_viewmodel.dart';
 
 class LoginViewModel extends BaseViewModel {
   final AuthenticationService authenticationService = AuthenticationService(HttpService());
