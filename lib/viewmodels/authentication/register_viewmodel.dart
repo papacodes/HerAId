@@ -19,8 +19,8 @@ class RegisterViewModel extends BaseViewModel {
   TextEditingController passwordController = TextEditingController();
   TextEditingController contactNumberController = TextEditingController();
   TextEditingController passwordConfirmationController = TextEditingController();
-  TextEditingController emergencyContactController = TextEditingController();
-  TextEditingController universityController = TextEditingController();
+  TextEditingController passwordContactController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
 
   bool _register = false;
   bool get register => _register;
@@ -61,6 +61,8 @@ class RegisterViewModel extends BaseViewModel {
           name: firstNameController.text,
           surname: lastNameController.text,
           password: passwordController.text,
+          confirmPassword: passwordConfirmationController.text,
+          address: addressController.text,
           contactNumber: contactNumberController.text,
         ),
       );

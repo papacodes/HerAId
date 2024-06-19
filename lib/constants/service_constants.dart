@@ -1,5 +1,5 @@
 class ServiceConstants {
-  static String baseURL = "http://127.0.0.1:87/api/";
+  static String baseURL = "http://herAId.com/api/authentication/login";
 
   static String userService = "users";
 
