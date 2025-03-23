@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:her_aid/models/http_service/http_error.dart';
+import 'package:her_aid/core/models/http_service/http_error.dart';
 import 'package:her_aid/res/navigator.dart';
 import 'package:her_aid/views/screens/authentication/login_view.dart';
 

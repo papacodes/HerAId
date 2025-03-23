@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:her_aid/models/http_service/http_error.dart';
-import 'package:her_aid/models/requests/login_request.dart';
-import 'package:her_aid/models/responses/login_response.dart';
+import 'package:her_aid/core/models/http_service/http_error.dart';
+import 'package:her_aid/core/models/requests/login_request.dart';
+import 'package:her_aid/core/models/responses/login_response.dart';
 import 'package:her_aid/res/toast.dart';
 import 'package:her_aid/services/http_service/http_service.dart';
 import 'package:her_aid/services/implementation/authentication_service.dart';

@@ -18,11 +18,7 @@ class MapHelper {
         children: [
           OSMFlutter(
             controller: mapController,
-            onMapIsReady: (controller) {
-              addMarkerToMap(
-                mapController, /* pass latitude and longitude here */
-              );
-            },
+            onMapIsReady: (controller) {},
             osmOption: osmOption ??
                 OSMOption(
                   zoomOption: zoomOption ?? const ZoomOption(initZoom: 20),

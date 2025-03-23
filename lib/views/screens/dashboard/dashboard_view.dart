@@ -13,7 +13,11 @@ class DashboardView extends StatefulWidget {
 
 class _DashboardViewState extends State<DashboardView> {
   late DashboardViewModel vm;
-  final MapController _mapController = MapController();
+  final MapController _mapController = MapController(
+      initMapWithUserPosition: UserTrackingOption(
+    enableTracking: true,
+    unFollowUser: false,
+  ));
 
   @override
   Widget build(BuildContext context) => ViewModelProvider<DashboardViewModel>(
@@ -32,10 +36,6 @@ class _DashboardViewState extends State<DashboardView> {
         future: MapHelper.buildMap(
           context,
           mapController: _mapController,
-          userTrackingOption: const UserTrackingOption(
-            enableTracking: true,
-            unFollowUser: false,
-          ),
         ),
         builder: (context, snapshot) {
           if (snapshot.hasData) {

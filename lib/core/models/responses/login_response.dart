@@ -1,4 +1,4 @@
-import 'package:her_aid/models/responses/user_response.dart';
+import 'package:her_aid/core/models/responses/user_response.dart';
 
 class LoginResponse {
   UserResponse? user;

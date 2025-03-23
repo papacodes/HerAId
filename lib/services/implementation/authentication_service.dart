@@ -1,9 +1,9 @@
-import 'package:her_aid/constants/service_constants.dart';
-import 'package:her_aid/models/http_service/http_response.dart';
-import 'package:her_aid/models/requests/login_request.dart';
-import 'package:her_aid/models/requests/register_request.dart';
-import 'package:her_aid/models/responses/login_response.dart';
-import 'package:her_aid/models/responses/user_response.dart';
+import 'package:her_aid/core/constants/service_constants.dart';
+import 'package:her_aid/core/models/http_service/http_response.dart';
+import 'package:her_aid/core/models/requests/login_request.dart';
+import 'package:her_aid/core/models/requests/register_request.dart';
+import 'package:her_aid/core/models/responses/login_response.dart';
+import 'package:her_aid/core/models/responses/user_response.dart';
 import 'package:her_aid/services/http_service/http_service.dart';
 import 'package:her_aid/services/interfaces/i_authentication_service.dart';
 
