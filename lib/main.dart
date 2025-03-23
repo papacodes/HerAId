@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:her_aid/core/routes/app_routes.dart';
+import 'package:her_aid/core/routes/on_generate_route.dart';
+import 'package:her_aid/core/themes/app_themes.dart';
 import 'package:her_aid/res/navigator.dart';
 import 'package:her_aid/views/screens/authentication/login_view.dart';
 import 'package:her_aid/views/screens/dashboard/dashboard_view.dart';
@@ -13,19 +16,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: NavigatorHelper.navigatorKey,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-            systemOverlayStyle: SystemUiOverlayStyle.dark,
-            foregroundColor: Colors.black,
-            backgroundColor: Colors.transparent,
-            elevation: 0),
-        fontFamily: "Poppins",
-        useMaterial3: false,
-      ),
-      home: const LoginView(),
+      title: 'Sesi',
+      theme: AppTheme.defaultTheme,
+      onGenerateRoute: RouteGenerator.onGenerate,
+      initialRoute: AppRoutes.onboarding,
     );
-    // This widget is the root of your application.
   }
 }
