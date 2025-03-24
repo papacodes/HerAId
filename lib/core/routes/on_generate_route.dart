@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 
-// import '../../views/auth/forget_password_page.dart';
-// import '../../views/auth/intro_login_page.dart';
-// import '../../views/auth/login_or_signup_page.dart';
-// import '../../views/auth/login_page.dart';
-// import '../../views/auth/number_verification_page.dart';
-// import '../../views/auth/password_reset_page.dart';
-// import '../../views/auth/sign_up_page.dart';
+import '../../views/auth/forget_password_page.dart';
+import '../../views/auth/intro_login_page.dart';
+import '../../views/auth/login_or_signup_page.dart';
+import '../../views/auth/login_page.dart';
+import '../../views/auth/number_verification_page.dart';
+import '../../views/auth/password_reset_page.dart';
+import '../../views/auth/sign_up_page.dart';
 // import '../../views/cart/cart_page.dart';
 // import '../../views/cart/checkout_page.dart';
 // import '../../views/drawer/about_us_page.dart';
@@ -55,7 +55,7 @@ class RouteGenerator {
 
     switch (route) {
       case AppRoutes.introLogin:
-      // return CupertinoPageRoute(builder: (_) => const IntroLoginPage());
+        return CupertinoPageRoute(builder: (_) => const IntroLoginPage());
 
       case AppRoutes.onboarding:
         return CupertinoPageRoute(builder: (_) => const OnboardingPage());
@@ -81,24 +81,23 @@ class RouteGenerator {
       // case AppRoutes.categoryDetails:
       //   return CupertinoPageRoute(builder: (_) => const CategoryProductPage());
 
-      // case AppRoutes.login:
-      //   return CupertinoPageRoute(builder: (_) => const LoginPage());
+      case AppRoutes.login:
+        return CupertinoPageRoute(builder: (_) => const LoginPage());
 
-      // case AppRoutes.signup:
-      //   return CupertinoPageRoute(builder: (_) => const SignUpPage());
+      case AppRoutes.signup:
+        return CupertinoPageRoute(builder: (_) => const SignUpPage());
 
-      // case AppRoutes.loginOrSignup:
-      //   return CupertinoPageRoute(builder: (_) => const LoginOrSignUpPage());
+      case AppRoutes.loginOrSignup:
+        return CupertinoPageRoute(builder: (_) => const LoginOrSignUpPage());
 
-      // case AppRoutes.numberVerification:
-      //   return CupertinoPageRoute(
-      //       builder: (_) => const NumberVerificationPage());
+      case AppRoutes.numberVerification:
+        return CupertinoPageRoute(builder: (_) => const NumberVerificationPage());
 
-      // case AppRoutes.forgotPassword:
-      //   return CupertinoPageRoute(builder: (_) => const ForgetPasswordPage());
+      case AppRoutes.forgotPassword:
+        return CupertinoPageRoute(builder: (_) => const ForgetPasswordPage());
 
-      // case AppRoutes.passwordReset:
-      //   return CupertinoPageRoute(builder: (_) => const PasswordResetPage());
+      case AppRoutes.passwordReset:
+        return CupertinoPageRoute(builder: (_) => const PasswordResetPage());
 
       // case AppRoutes.newItems:
       //   return CupertinoPageRoute(builder: (_) => const NewItemsPage());
