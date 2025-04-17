@@ -5,10 +5,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:her_aid/core/constants/service_constants.dart';
-import 'package:her_aid/core/models/http_service/http_error.dart';
-import 'package:her_aid/core/models/http_service/http_response.dart';
-import 'package:her_aid/services/http_service/base_http_service.dart';
+import 'package:mzala/core/constants/service_constants.dart';
+import 'package:mzala/core/models/http_service/http_error.dart';
+import 'package:mzala/core/models/http_service/http_response.dart';
+import 'package:mzala/services/http_service/base_http_service.dart';
 
 class HttpService extends BaseHttpService {
   // Send an HTTP request and handle the response

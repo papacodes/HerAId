@@ -2,7 +2,14 @@ import 'package:form_field_validator/form_field_validator.dart';
 
 class Validators {
   /// Email Validator
-  static final email = EmailValidator(errorText: 'Enter a valid email address');
+  static final email = MultiValidator([
+    RequiredValidator(errorText: 'Email is required'),
+    EmailValidator(errorText: 'Enter a valid email address'),
+    PatternValidator(
+      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+      errorText: 'Please enter a valid email address'
+    ),
+  ]);
 
   /// Password Validator
   static final password = MultiValidator([

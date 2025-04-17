@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:her_aid/core/constants/general_constants.dart';
+import 'package:mzala/core/constants/general_constants.dart';
 
 import '../../../core/constants/constants.dart';
 

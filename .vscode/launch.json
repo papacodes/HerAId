@@ -5,19 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "her_aid",
+            "name": "mzala app",
             "request": "launch",
             "type": "dart",
             "program": "lib/main.dart"
         },
         {
-            "name": "her_aid (profile mode)",
+            "name": "mzala app (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "her_aid (release mode)",
+            "name": "mzala app (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

@@ -45,7 +45,7 @@ import '../../views/auth/sign_up_page.dart';
 // import '../../views/review/review_page.dart';
 // import '../../views/review/submit_review_page.dart';
 // import '../../views/save/save_page.dart';
-import 'package:her_aid/views/onboarding/onboarding_page.dart';
+import 'package:mzala/views/onboarding/onboarding_page.dart';
 import 'app_routes.dart';
 import 'unknown_page.dart';
 

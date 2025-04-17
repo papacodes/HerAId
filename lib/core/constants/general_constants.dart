@@ -1,3 +1,3 @@
 class GeneralConstants {
-  static String appName = "Sesi";
+  static String appName = "Mzala";
 }

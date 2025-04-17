@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:her_aid/core/routes/app_routes.dart';
-import 'package:her_aid/core/routes/on_generate_route.dart';
-import 'package:her_aid/core/themes/app_themes.dart';
-import 'package:her_aid/res/navigator.dart';
-import 'package:her_aid/views/screens/authentication/login_view.dart';
-import 'package:her_aid/views/screens/dashboard/dashboard_view.dart';
+import 'package:mzala/core/initializer.dart';
+import 'package:mzala/core/routes/app_routes.dart';
+import 'package:mzala/core/routes/on_generate_route.dart';
+import 'package:mzala/core/themes/app_themes.dart';
 
 void main() async {
+  Initializer();
   runApp(const MyApp());
 }
 
@@ -16,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Sesi',
+      title: 'Mzala',
       theme: AppTheme.defaultTheme,
       onGenerateRoute: RouteGenerator.onGenerate,
       initialRoute: AppRoutes.onboarding,

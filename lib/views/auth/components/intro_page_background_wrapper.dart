@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:her_aid/core/components/skeleton.dart';
+import 'package:mzala/core/components/skeleton.dart';
 
 class IntroLoginBackgroundWrapper extends StatelessWidget {
   const IntroLoginBackgroundWrapper({

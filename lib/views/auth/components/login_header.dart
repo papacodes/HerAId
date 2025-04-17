@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:her_aid/core/components/asset_image.dart';
-import 'package:her_aid/core/constants/general_constants.dart';
-import 'package:her_aid/core/constants/constants.dart';
+import 'package:mzala/core/components/asset_image.dart';
+import 'package:mzala/core/constants/general_constants.dart';
+import 'package:mzala/core/constants/constants.dart';
 
 class LoginPageHeader extends StatelessWidget {
   const LoginPageHeader({

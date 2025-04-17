@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/app_defaults.dart';
+import 'package:mzala/core/constants/app_defaults.dart';
 
 class UiUtil {
   /// OPENS BOTTOM SHEET WITH THE GIVEN WIDGET
@@ -12,8 +12,7 @@ class UiUtil {
       context: context,
       builder: (ctx) => widget,
       isScrollControlled: true,
-      constraints:
-          BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.85),
+      constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.85),
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       shape: RoundedRectangleBorder(
         borderRadius: AppDefaults.bottomSheetRadius,

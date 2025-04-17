@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:her_aid/core/constants/constants.dart';
-import 'package:her_aid/views/auth/components/intro_page_background_wrapper.dart';
-import 'package:her_aid/views/auth/components/intro_page_body_area.dart';
+import 'package:mzala/core/constants/constants.dart';
+import 'package:mzala/views/auth/components/intro_page_background_wrapper.dart';
+import 'package:mzala/views/auth/components/intro_page_body_area.dart';
 
 class IntroLoginPage extends StatelessWidget {
   const IntroLoginPage({super.key});

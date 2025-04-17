@@ -1,11 +1,12 @@
-import 'package:her_aid/core/constants/service_constants.dart';
-import 'package:her_aid/core/models/http_service/http_response.dart';
-import 'package:her_aid/core/models/requests/login_request.dart';
-import 'package:her_aid/core/models/requests/register_request.dart';
-import 'package:her_aid/core/models/responses/login_response.dart';
-import 'package:her_aid/core/models/responses/user_response.dart';
-import 'package:her_aid/services/http_service/http_service.dart';
-import 'package:her_aid/services/interfaces/i_authentication_service.dart';
+import 'package:mzala/core/constants/service_constants.dart';
+import 'package:mzala/core/models/http_service/http_response.dart';
+import 'package:mzala/core/models/realm/authentication/realm_login_response.dart';
+import 'package:mzala/core/models/requests/login_request.dart';
+import 'package:mzala/core/models/requests/register_request.dart';
+import 'package:mzala/core/models/responses/login_response.dart';
+import 'package:mzala/core/models/responses/user_response.dart';
+import 'package:mzala/services/http_service/http_service.dart';
+import 'package:mzala/services/interfaces/i_authentication_service.dart';
 
 class AuthenticationService extends IAuthenticationService {
   final HttpService httpService;
@@ -13,7 +14,7 @@ class AuthenticationService extends IAuthenticationService {
   AuthenticationService(this.httpService);
 
   @override
-  Future<LoginResponse> login(LoginReqest loginCredentials) async {
+  Future<RealmLoginResponse> login(LoginReqest loginCredentials) async {
     try {
       HttpResponse response = await httpService.post(
         data: loginCredentials,
@@ -21,17 +22,14 @@ class AuthenticationService extends IAuthenticationService {
         isProtected: false,
       );
 
-      return LoginResponse(
-        user: UserResponse.fromJson(response.data['user'] as Map<String, dynamic>),
-        token: response.data['token'] as String?,
-      );
+      return $RealmLoginResponse.fromJson(response.data);
     } catch (e) {
       rethrow;
     }
   }
 
   @override
-  Future<LoginResponse> register(RegisterRequest registerDetails) async {
+  Future<RealmLoginResponse> register(RegisterRequest registerDetails) async {
     try {
       HttpResponse response = await httpService.post(
         data: registerDetails,
@@ -41,10 +39,7 @@ class AuthenticationService extends IAuthenticationService {
         isProtected: false,
       );
 
-      return LoginResponse(
-        user: UserResponse.fromJson(response.data['user'] as Map<String, dynamic>),
-        token: response.data['token'] as String?,
-      );
+      return $RealmLoginResponse.fromJson(response.data);
     } catch (e) {
       rethrow;
     }

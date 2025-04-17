@@ -1,9 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:her_aid/core/models/http_service/http_error.dart';
-import 'package:her_aid/res/navigator.dart';
-import 'package:her_aid/views/screens/authentication/login_view.dart';
+import 'package:mzala/core/models/http_service/http_error.dart';
+import 'package:mzala/res/navigator.dart';
 
 class BaseHttpService {
   Future<Map<String, String>> getHeaders(bool mustAuthenticated) async {
@@ -28,7 +26,7 @@ class BaseHttpService {
   void handleUnAuthenticated(statusCode, shouldNavigate) {
     if (statusCode == 401) {
       if (shouldNavigate) {
-        NavigatorHelper.replaceAll(const LoginView());
+        // NavigatorHelper.replaceAll(const LoginView());
       } else {
         throw HttpError(
           message: 'Unauthorized',

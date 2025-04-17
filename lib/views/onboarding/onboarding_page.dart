@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:her_aid/core/constants/constants.dart';
-import 'package:her_aid/core/routes/app_routes.dart';
+import 'package:mzala/core/constants/constants.dart';
+import 'package:mzala/core/routes/app_routes.dart';
 import 'components/onboarding_view.dart';
 import 'data/onboarding_data.dart';
 import 'data/onboarding_model.dart';

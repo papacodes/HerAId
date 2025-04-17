@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:her_aid/core/routes/app_routes.dart';
+import 'package:mzala/core/routes/app_routes.dart';
 
 class AlreadyHaveAnAccount extends StatelessWidget {
   const AlreadyHaveAnAccount({

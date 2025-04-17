@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:her_aid/core/constants/app_defaults.dart';
+import 'package:mzala/core/constants/app_defaults.dart';
 import 'skeleton.dart';
 
 class AssetImageWithLoader extends StatelessWidget {

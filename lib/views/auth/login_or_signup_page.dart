@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:her_aid/core/components/asset_image.dart';
-import 'package:her_aid/core/constants/general_constants.dart';
+import 'package:mzala/core/components/asset_image.dart';
+import 'package:mzala/core/constants/general_constants.dart';
 
 import '../../core/components/network_image.dart';
 import '../../core/constants/constants.dart';

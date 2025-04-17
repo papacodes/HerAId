@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:her_aid/core/constants/app_colors.dart';
-import 'package:her_aid/core/constants/app_defaults.dart';
-import 'package:her_aid/core/constants/general_constants.dart';
-import 'package:her_aid/core/routes/app_routes.dart';
+import 'package:mzala/core/constants/app_colors.dart';
+import 'package:mzala/core/constants/app_defaults.dart';
+import 'package:mzala/core/constants/general_constants.dart';
+import 'package:mzala/core/routes/app_routes.dart';
+import 'package:mzala/res/navigator.dart';
+import 'package:mzala/views/auth/sign_up_page.dart';
 
 class IntroPageBodyArea extends StatelessWidget {
   const IntroPageBodyArea({

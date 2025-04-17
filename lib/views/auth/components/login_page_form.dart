@@ -1,39 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mzala/core/routes/app_routes.dart';
+import 'package:provider/provider.dart';
 
-import '../../../core/constants/constants.dart';
-import '../../../core/routes/app_routes.dart';
-import '../../../core/themes/app_themes.dart';
-import '../../../core/utils/validators.dart';
-import 'login_button.dart';
+import 'package:mzala/core/constants/constants.dart';
+import 'package:mzala/core/themes/app_themes.dart';
+import 'package:mzala/core/utils/validators.dart';
+import 'package:mzala/views/auth/components/login_button.dart';
+import 'package:mzala/viewmodels/auth/login_viewmodel.dart';
 
-class LoginPageForm extends StatefulWidget {
-  const LoginPageForm({
-    super.key,
-  });
-
-  @override
-  State<LoginPageForm> createState() => _LoginPageFormState();
-}
-
-class _LoginPageFormState extends State<LoginPageForm> {
-  final _key = GlobalKey<FormState>();
-
-  bool isPasswordShown = false;
-  onPassShowClicked() {
-    isPasswordShown = !isPasswordShown;
-    setState(() {});
-  }
-
-  onLogin() {
-    final bool isFormOkay = _key.currentState?.validate() ?? false;
-    if (isFormOkay) {
-      Navigator.pushNamed(context, AppRoutes.entryPoint);
-    }
-  }
+class LoginPageForm extends StatelessWidget {
+  const LoginPageForm({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = Provider.of<LoginViewModel>(context);
+
     return Theme(
       data: AppTheme.defaultTheme.copyWith(
         inputDecorationTheme: AppTheme.secondaryInputDecorationTheme,
@@ -41,17 +23,19 @@ class _LoginPageFormState extends State<LoginPageForm> {
       child: Padding(
         padding: const EdgeInsets.all(AppDefaults.padding),
         child: Form(
-          key: _key,
+          key: viewModel.formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Phone Field
-              const Text("Phone Number"),
+              // Email Field
+              const Text("Email Address"),
               const SizedBox(height: 8),
               TextFormField(
-                keyboardType: TextInputType.number,
-                validator: Validators.requiredWithFieldName('Phone').call,
+                controller: viewModel.emailController,
+                keyboardType: TextInputType.emailAddress,
+                validator: Validators.email.call,
                 textInputAction: TextInputAction.next,
+                enabled: !viewModel.busy,
               ),
               const SizedBox(height: AppDefaults.padding),
 
@@ -60,14 +44,15 @@ class _LoginPageFormState extends State<LoginPageForm> {
               const SizedBox(height: 8),
               TextFormField(
                 validator: Validators.password.call,
-                onFieldSubmitted: (v) => onLogin(),
+                controller: viewModel.passwordController,
+                onFieldSubmitted: (_) => viewModel.handleLogin(context),
                 textInputAction: TextInputAction.done,
-                obscureText: !isPasswordShown,
+                obscureText: !viewModel.isPasswordShown,
                 decoration: InputDecoration(
                   suffixIcon: Material(
                     color: Colors.transparent,
                     child: IconButton(
-                      onPressed: onPassShowClicked,
+                      onPressed: viewModel.togglePasswordVisibility,
                       icon: SvgPicture.asset(
                         AppIcons.eye,
                         width: 24,
@@ -89,7 +74,10 @@ class _LoginPageFormState extends State<LoginPageForm> {
               ),
 
               // Login labelLarge
-              LoginButton(onPressed: onLogin),
+              LoginButton(
+                isLoading: viewModel.busy,
+                onPressed: () => viewModel.handleLogin(context),
+              ),
             ],
           ),
         ),

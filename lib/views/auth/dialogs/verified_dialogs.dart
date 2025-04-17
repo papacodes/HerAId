@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:her_aid/core/components/network_image.dart';
-import 'package:her_aid/core/constants/app_defaults.dart';
-import 'package:her_aid/core/constants/app_images.dart';
-import 'package:her_aid/core/routes/app_routes.dart';
+import 'package:mzala/core/components/network_image.dart';
+import 'package:mzala/core/constants/app_defaults.dart';
+import 'package:mzala/core/constants/app_images.dart';
+import 'package:mzala/core/routes/app_routes.dart';
 
 class VerifiedDialog extends StatelessWidget {
   const VerifiedDialog({super.key});
