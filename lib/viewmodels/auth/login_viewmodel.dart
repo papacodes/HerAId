@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mzala/core/models/http_service/http_error.dart';
 import 'package:mzala/core/models/realm/authentication/realm_login_response.dart';
 import 'package:mzala/core/models/requests/login_request.dart';
+import 'package:mzala/core/routes/app_routes.dart';
 import 'package:mzala/res/toast.dart';
 import 'package:mzala/services/http_service/http_service.dart';
 import 'package:mzala/services/implementation/authentication_service.dart';
@@ -47,7 +48,7 @@ class LoginViewModel extends BaseViewModel {
       if (response?.token != null) {
         await _realmService.saveUserData(response!);
         ToastManager.showSuccessToast(context, "Login success");
-        return;
+        Navigator.pushNamed(context, AppRoutes.profile);
       }
       ToastManager.showErrorToast(context, error);
     }

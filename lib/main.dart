@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Mzala',
       theme: AppTheme.defaultTheme,
       onGenerateRoute: RouteGenerator.onGenerate,
-      initialRoute: AppRoutes.onboarding,
+      initialRoute: hasActiveSession ? AppRoutes.profile : AppRoutes.onboarding,
     );
   }
 }

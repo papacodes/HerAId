@@ -1,7 +1,6 @@
 import 'package:mzala/core/models/realm/authentication/realm_login_response.dart';
 import 'package:realm/realm.dart';
 import 'package:mzala/core/models/realm/authentication/realm_user.dart';
-import 'package:mzala/core/models/responses/login_response.dart';
 
 class RealmService {
   static final RealmService _instance = RealmService._internal();
