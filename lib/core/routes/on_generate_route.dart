@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:mzala/views/main/dashboard.dart';
+import 'package:mzala/views/main/settings_page.dart';
 import '../../views/auth/forget_password_page.dart';
 import '../../views/auth/intro_login_page.dart';
 import '../../views/auth/login_or_signup_page.dart';
@@ -38,6 +40,12 @@ class RouteGenerator {
 
       case AppRoutes.passwordReset:
         return CupertinoPageRoute(builder: (_) => const PasswordResetPage());
+
+      case AppRoutes.dashboard:
+        return CupertinoPageRoute(builder: (_) => const Dashboard());
+
+      case AppRoutes.settings:
+        return CupertinoPageRoute(builder: (_) => const SettingsPage());
 
       default:
         return errorRoute();
