@@ -6,7 +6,7 @@ import 'package:mzala/core/models/requests/register_request.dart';
 import 'package:mzala/core/models/responses/login_response.dart';
 import 'package:mzala/core/models/responses/user_response.dart';
 import 'package:mzala/services/http_service/http_service.dart';
-import 'package:mzala/services/interfaces/i_authentication_service.dart';
+import 'package:mzala/services/repository/interfaces/i_authentication_service.dart';
 
 class AuthenticationService extends IAuthenticationService {
   final HttpService httpService;

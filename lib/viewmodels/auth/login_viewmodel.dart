@@ -5,7 +5,7 @@ import 'package:mzala/core/models/requests/login_request.dart';
 import 'package:mzala/core/routes/app_routes.dart';
 import 'package:mzala/res/toast.dart';
 import 'package:mzala/services/http_service/http_service.dart';
-import 'package:mzala/services/implementation/authentication_service.dart';
+import 'package:mzala/services/repository/implementation/authentication_service.dart';
 import 'package:mzala/services/realm/realm_service.dart';
 import 'package:mzala/viewmodels/base_viewmodel.dart';
 import 'package:mzala/core/initializer.dart';

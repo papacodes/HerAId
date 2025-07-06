@@ -44,3 +44,40 @@ class AssetImageWithLoader extends StatelessWidget {
     );
   }
 }
+
+
+class AssetImageWithLoader extends StatelessWidget {
+  final String imagePath;
+  final BoxFit fit;
+  final double? width;
+  final double? height;
+
+  const AssetImageWithLoader(
+    this.imagePath, {
+    super.key,
+    this.fit = BoxFit.cover,
+    this.width,
+    this.height,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      imagePath,
+      fit: fit,
+      width: width,
+      height: height,
+      errorBuilder: (context, error, stackTrace) {
+        return Container(
+          width: width,
+          height: height,
+          color: Colors.grey[300],
+          child: const Icon(
+            Icons.error,
+            color: Colors.grey,
+          ),
+        );
+      },
+    );
+  }
+}

@@ -33,6 +33,10 @@ dependencies:
   get_it: ^8.0.3
   animations: ^2.0.11
 
+  app_theme:
+    path: ../app-theme
+  google_api_availability: ^5.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

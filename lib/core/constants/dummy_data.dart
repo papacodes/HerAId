@@ -62,3 +62,21 @@ class Dummy {
     ),
   ];
 }
+
+
+class DummyData {
+  // Add any dummy data constants you need here
+  static const List<String> sampleCategories = [
+    'Emergency',
+    'Support',
+    'Resources',
+    'Education',
+  ];
+  
+  static const List<String> sampleMessages = [
+    'Help is available',
+    'You are not alone',
+    'Stay safe',
+    'Reach out for support',
+  ];
+}

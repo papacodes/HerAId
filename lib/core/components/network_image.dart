@@ -5,39 +5,53 @@ import '../constants/app_defaults.dart';
 import 'skeleton.dart';
 
 class NetworkImageWithLoader extends StatelessWidget {
+  final String imageUrl;
   final BoxFit fit;
+  final double? width;
+  final double? height;
 
-  /// This widget is used for displaying network image with a placeholder
   const NetworkImageWithLoader(
-    this.src, {
+    this.imageUrl, {
     super.key,
     this.fit = BoxFit.cover,
-    this.radius = AppDefaults.radius,
-    this.borderRadius,
+    this.width,
+    this.height,
   });
-
-  final String src;
-  final double radius;
-  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: borderRadius ?? BorderRadius.all(Radius.circular(radius)),
-      child: CachedNetworkImage(
-        fit: fit,
-        imageUrl: src,
-        imageBuilder: (context, imageProvider) => Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: imageProvider,
-              fit: fit,
+    return Image.network(
+      imageUrl,
+      fit: fit,
+      width: width,
+      height: height,
+      loadingBuilder: (context, child, loadingProgress) {
+        if (loadingProgress == null) return child;
+        return Container(
+          width: width,
+          height: height,
+          color: Colors.grey[300],
+          child: Center(
+            child: CircularProgressIndicator(
+              value: loadingProgress.expectedTotalBytes != null
+                  ? loadingProgress.cumulativeBytesLoaded /
+                      loadingProgress.expectedTotalBytes!
+                  : null,
             ),
           ),
-        ),
-        placeholder: (context, url) => const Skeleton(),
-        errorWidget: (context, url, error) => const Icon(Icons.error),
-      ),
+        );
+      },
+      errorBuilder: (context, error, stackTrace) {
+        return Container(
+          width: width,
+          height: height,
+          color: Colors.grey[300],
+          child: const Icon(
+            Icons.error,
+            color: Colors.grey,
+          ),
+        );
+      },
     );
   }
 }
