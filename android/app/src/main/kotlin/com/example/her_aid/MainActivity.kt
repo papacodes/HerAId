@@ -1,4 +1,4 @@
-package com.example.her_aid
+package com.adrielcorp.chomie
 
 import io.flutter.embedding.android.FlutterActivity
 
