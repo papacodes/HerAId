@@ -282,13 +282,46 @@ class LocationPage extends StatelessWidget {
                   if (!viewModel.cardsVisible)
                     Positioned(
                       bottom: 20,
+                      left: 20,
                       right: 20,
-                      child: FloatingActionButton(
-                        onPressed: viewModel.toggleCardsVisibility,
-                        backgroundColor: Colors.blue,
-                        child: const Icon(
-                          Icons.people,
-                          color: Colors.white,
+                      child: GestureDetector(
+                        onTap: viewModel.toggleCardsVisibility,
+                        child: Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 16,
+                            horizontal: 20,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(25),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.1),
+                                blurRadius: 10,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.people,
+                                color: Colors.blue,
+                                size: 24,
+                              ),
+                              const SizedBox(width: 12),
+                              Text(
+                                '${viewModel.emergencyContacts.length} Contact Locations',
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black87,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

@@ -57,7 +57,21 @@ class HomePage extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
+
                 const SizedBox(height: 20),
+
+                // Emergency Contacts Card
+                QuickActionCard(
+                  title: 'Emergency Contacts',
+                  subtitle: 'Manage your emergency contacts',
+                  icon: Icons.people_rounded,
+                  iconColor: Colors.brown,
+                  onTap: () {
+                    // Handle emergency contacts navigation
+                  },
+                ),
+
+                const SizedBox(height: 16),
 
                 // Current Location Card (special design)
                 LocationCard(
@@ -67,30 +81,20 @@ class HomePage extends StatelessWidget {
                     // Handle location navigation
                   },
                 ),
-                const SizedBox(height: 16),
 
-                // Emergency Contacts Card
-                QuickActionCard(
-                  title: 'Emergency Contacts',
-                  subtitle: 'Manage your emergency contacts',
-                  icon: Icons.contact_phone,
-                  iconColor: Colors.blue,
-                  onTap: () {
-                    // Handle emergency contacts navigation
-                  },
-                ),
                 const SizedBox(height: 16),
 
                 // AI Chatbot Card
                 QuickActionCard(
                   title: 'AI Chatbot',
                   subtitle: 'Get help and support',
-                  icon: Icons.chat_bubble,
-                  iconColor: Colors.purple,
+                  icon: Icons.rocket_launch,
+                  iconColor: Colors.blue,
                   onTap: () {
                     // Handle AI chatbot navigation
                   },
                 ),
+
                 const SizedBox(height: 20),
               ],
             ),

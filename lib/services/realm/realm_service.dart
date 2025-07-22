@@ -1,4 +1,5 @@
 import 'package:mzala/core/models/realm/authentication/realm_login_response.dart';
+import 'package:mzala/core/models/realm/settings/location_settings.dart';
 import 'package:realm/realm.dart';
 import 'package:mzala/core/models/realm/authentication/realm_user.dart';
 
@@ -12,11 +13,13 @@ class RealmService {
 
   RealmService._internal() {
     final config = Configuration.local(
-      [RealmUser.schema, RealmLoginResponse.schema],
-      schemaVersion: 1,
+      [RealmUser.schema, RealmLoginResponse.schema, LocationSettings.schema],
+      schemaVersion: 2, // Increment schema version
     );
     _realm = Realm(config);
   }
+
+  Realm get realm => _realm;
 
   Future<void> saveUserData($RealmLoginResponse loginResponse) async {
     if (loginResponse.user == null) return;

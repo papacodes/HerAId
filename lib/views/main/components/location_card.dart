@@ -97,7 +97,7 @@ class LocationCard extends StatelessWidget {
     return const Center(
       child: Icon(
         Icons.location_on,
-        color: Colors.green,
+        color: Colors.red,
         size: 48,
       ),
     );

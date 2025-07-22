@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../base_viewmodel.dart';
 import '../../views/main/profile_page.dart';
+import '../../views/main/location_sharing_page.dart';
 
 class SettingsViewModel extends BaseViewModel {
   SettingsViewModel();
@@ -30,11 +31,10 @@ class SettingsViewModel extends BaseViewModel {
   }
 
   void navigateToLocationSharing(BuildContext context) {
-    // TODO: Navigate to location sharing settings
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(builder: (context) => const LocationSharingPage()),
-    // );
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const LocationSharingPage()),
+    );
   }
 
   void navigateToDataUsage(BuildContext context) {
